@@ -19,7 +19,7 @@ function Modal() {
 	const [movie, setMovie] = useRecoilState(movieState);
 	const [trailer, setTrailer] = useState("");
 	const [showModal, setShowModal] = useRecoilState(modalState);
-	const [muted, setMuted] = useState(true);
+	const [muted, setMuted] = useState(false);
 	const [genres, setGenres] = useState<Genre[]>([]);
 	const [addedToList, setAddedToList] = useState(false);
 	const { user } = useAuth();
@@ -73,6 +73,7 @@ function Modal() {
 						width="100%"
 						height="100%"
 						playing
+						muted={muted}
 						style={{ position: "absolute", top: "0" }}
 					/>
 				</div>
